@@ -257,5 +257,29 @@ namespace ArcticIntelligence.Test.TreeTest
             Assert.AreEqual(15, child_3.SumValue);
         }
 
+        [Test]
+        public void RandomTree()
+        {
+
+            var root = new TreeNode<int>(40, "root");
+            var parent1 = new TreeNode<int>(36, "parent1", root);
+            var parent2 = new TreeNode<int>(34, "parent2", root);
+            var child_1 = new TreeNode<int>(21, "child_1", parent1);
+            var child_2 = new TreeNode<int>(23, "child_2", parent1);
+            var child_3 = new TreeNode<int>(26, "child_3", parent2);
+            var grandChild_1 = new TreeNode<int>(11, "grandChild_1", child_1);
+            var grandChild_2 = new TreeNode<int>(18, "grandChild_2", child_1);
+            var grandChild_3 = new TreeNode<int>(15, "grandChild_3", child_1);
+            Assert.AreEqual(224, root.SumValue);
+            Assert.AreEqual(124, parent1.SumValue);
+            Assert.AreEqual(60, parent2.SumValue);
+            Assert.AreEqual(65, child_1.SumValue);
+            Assert.AreEqual(23, child_2.SumValue);
+            Assert.AreEqual(26, child_3.SumValue);
+            Assert.AreEqual(11, grandChild_1.SumValue);
+            Assert.AreEqual(18, grandChild_2.SumValue);
+            Assert.AreEqual(15, grandChild_3.SumValue);
+        }
+
     }
 }
